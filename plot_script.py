@@ -4,8 +4,8 @@ import pickle
 
 plt_legend_dict = {"expected_sarsa_agent": "Expected SARSA with neural network",
                    "random_agent": "Random"}
-path_dict = {"expected_sarsa_agent": "results/",
-             "random_agent": "./"}
+path_dict = {"expected_sarsa_agent": "results",
+             "random_agent": "results"}
 
 plt_label_dict = {"expected_sarsa_agent": "Sum of\nreward\nduring\nepisode"}
 
@@ -25,7 +25,7 @@ def smooth(data, k):
     return smoothed_data
 
 # Function to plot result
-def plot_result(data_name_array):
+def plot_result(data_name_array, show_fig=False):
     plt_agent_sweeps = []
     
     fig, ax = plt.subplots(figsize=(8,6))
@@ -53,4 +53,6 @@ def plot_result(data_name_array):
     ax.set_ylim([-300, 300])
 
     plt.tight_layout()
-    plt.show()     
+    plt.savefig("results/Learning_curve.jpg")
+    if show_fig:
+        plt.show()

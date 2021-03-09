@@ -1,4 +1,4 @@
-from lunar_landing_solved import Agent
+from agent import Agent
 from lunar_lander import LunarLanderEnvironment
 from rl_glue import RLGlue
 from tqdm import tqdm
@@ -17,12 +17,12 @@ agent_parameters = {
         'beta_v': 0.999,
         'epsilon': 1e-8
     },
-    'replay_buffer_size': 5000, #50000
+    'replay_buffer_size': 50000, #50000
     'minibatch_sz': 8,
     'num_replay_updates_per_step': 4,
     'gamma': 0.99,
     'tau': 0.001,
-    'weights': np.load("ActionValueNetworkWeightsTrained.npy", allow_pickle=True)
+    'weights': np.load("results/ActionValueNetworkWeights.npy", allow_pickle=True)
 }
 
 experiment_parameters = {
@@ -33,7 +33,6 @@ experiment_parameters = {
 
 environment_parameters = {'render': True}
 rl_glue = RLGlue(LunarLanderEnvironment, Agent)
-# print(np.load("ActionValueNetworkWeights.npy", allow_pickle=True))
 
 
 for run in range(1, 2):

@@ -13,7 +13,6 @@ class LunarLanderEnvironment(BaseEnvironment):
         Setup for the environment called when the experiment first starts.
         """
         self.env = gym.make("LunarLander-v2")
-        print(env_info)
         self.render = env_info["render"]
         self.env.seed(0)
 
