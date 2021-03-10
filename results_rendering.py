@@ -22,7 +22,7 @@ agent_parameters = {
     'num_replay_updates_per_step': 4,
     'gamma': 0.99,
     'tau': 0.001,
-    'weights': np.load("results/ActionValueNetworkWeights.npy", allow_pickle=True)
+    'weights': np.load("results/ActionValueNetworkWeightsTrained_v4.npy", allow_pickle=True)
 }
 
 experiment_parameters = {
